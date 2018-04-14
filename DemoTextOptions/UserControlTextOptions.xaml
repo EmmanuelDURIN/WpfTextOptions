@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="DemoTextOptions.UserControlTextOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DemoTextOptions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel TextOptions.TextFormattingMode="{Binding TextFormattingMode}" 
+                TextOptions.TextHintingMode="{Binding TextHintingMode}"
+                TextOptions.TextRenderingMode="{Binding TextRenderingMode}">
+        <TextBlock Text="TextFormattingMode :"  >
+            <LineBreak/>
+            <Run Text="{Binding TextFormattingMode, Mode=OneTime}" FontWeight="Bold"/>
+        </TextBlock>
+        <TextBlock Text="TextRenderingMode :"  >
+            <LineBreak/>
+            <Run Text="{Binding TextRenderingMode, Mode=OneTime}" FontWeight="Bold"/>
+        </TextBlock>
+        <TextBlock Text="TextHintingMode :"  >
+            <LineBreak/>
+            <Run Text="{Binding TextHintingMode, Mode=OneTime}" FontWeight="Bold"/>
+        </TextBlock>
+        <TextBlock Text="AZERT12345azert" />
+        <Viewbox 
+                                 Margin="0 -1 -1 0"
+                                 Stretch="Fill">
+            <Path x:Name="HeaderLeftPath" Fill="Black" >
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigure StartPoint="00,00" IsClosed="False">
+                                <LineSegment Point="00,10"/>
+                                <LineSegment Point="00,00"/>
+                                <BezierSegment Point1="40,20" Point2="30,46" Point3="56,46"/>
+                                <LineSegment Point="56,00"/>
+                                <LineSegment Point="0,00"/>
+                            </PathFigure>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+        </Viewbox>
+    </StackPanel>
+</UserControl>

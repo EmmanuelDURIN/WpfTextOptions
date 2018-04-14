@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoTextOptions"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Text Rendering mode" Height="350" Width="525">
+    <Window.Resources>
+        <DataTemplate x:Key="DataTemplate1">
+            <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black" Width="120" Margin="4">
+                <local:UserControlTextOptions />
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <ScrollViewer>
+            <ItemsControl Name="itemsControlTextModes" ItemTemplate="{DynamicResource DataTemplate1}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Window>
